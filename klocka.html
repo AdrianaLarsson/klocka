@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Klocka</title>
+        <link rel="stylesheet" type="text/css" href="design.css">
+
+
+
+
+
+<script>
+
+
+function changeTime()
+ {
+var today = new Date();
+
+var timme = today.getHours();
+var minut = today.getMinutes();
+var secund = today.getSeconds();
+
+timme = checkTime(timme);
+minut = checkTime(minut);
+secund = checkTime(secund);
+
+document.getElementById('timme').innerHTML = timme;
+document.getElementById('minut').innerHTML = minut;
+document.getElementById('secund').innerHTML = secund;
+
+
+
+ }
+setInterval("changeTime()", 1000);
+
+function checkTime(id){
+if (id < 10)
+id = "0" + id;
+ {
+
+ return id;
+
+ }
+}
+
+
+</script>
+</head>
+
+<body onload="changeTime()">
+
+        <div id="timme">00</div>:<div id="minut">00</div>:<div id="secund">00</div>
+    
+
+</body>
+</html>
